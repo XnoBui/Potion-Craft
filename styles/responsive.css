@@ -1,0 +1,613 @@
+/* Mobile First Responsive Design */
+
+/* Small Mobile Devices (320px - 480px) */
+@media (max-width: 480px) {
+    :root {
+        --spacing-xs: 0.25rem;
+        --spacing-sm: 0.5rem;
+        --spacing-md: 1rem;
+        --spacing-lg: 1.5rem;
+        --spacing-xl: 2rem;
+    }
+
+    .container {
+        padding: 0 var(--spacing-sm);
+    }
+
+    /* Header Adjustments */
+    .header-content {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+        align-items: stretch;
+        height: auto;
+        padding: var(--spacing-sm) 0;
+    }
+
+    .logo h1 {
+        font-size: 1.25rem;
+        text-align: center;
+    }
+
+    .nav-tabs {
+        order: 2;
+        justify-content: center;
+        display: none; /* Hide on mobile as per azukigram pattern */
+    }
+
+    .nav-tab {
+        flex: 1;
+        text-align: center;
+        padding: var(--spacing-sm);
+        font-size: 13px;
+    }
+
+    .connect-wallet-btn {
+        order: 1;
+        align-self: center;
+        font-size: 13px;
+        padding: 6px var(--spacing-sm);
+    }
+
+    /* Section Headers */
+    .section-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: var(--spacing-sm);
+    }
+
+    .section-header h2 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .section-description {
+        text-align: center;
+        margin-top: 0;
+        font-size: 13px;
+    }
+
+    .inventory-actions,
+    .worldpool-actions {
+        display: flex;
+        justify-content: center;
+    }
+
+    /* Rewards Panel */
+    .rewards-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
+    }
+
+    .reward-actions {
+        grid-column: 1;
+        justify-content: center;
+    }
+
+    /* Grids */
+    .inventory-grid,
+    .worldpool-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
+    }
+
+    /* Potion Cards */
+    .potion-card {
+        padding: var(--spacing-sm);
+    }
+
+    .potion-preview {
+        height: 140px;
+        font-size: 2rem;
+    }
+
+    .potion-info h4 {
+        font-size: 14px;
+    }
+
+    /* Empty States */
+    .empty-state {
+        padding: var(--spacing-lg) var(--spacing-sm);
+    }
+
+    .empty-icon {
+        font-size: 2.5rem;
+    }
+
+    .empty-content h3 {
+        font-size: 1.1rem;
+    }
+
+    .empty-content p {
+        font-size: 13px;
+    }
+
+    .empty-actions {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+
+    .empty-actions .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Pagination */
+    .pagination {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+
+    .page-info {
+        order: -1;
+        font-size: 13px;
+    }
+
+    /* Buttons */
+    .btn {
+        padding: 8px var(--spacing-sm);
+        font-size: 13px;
+    }
+
+    .btn small {
+        font-size: 11px;
+    }
+
+}
+
+/* Large Mobile Devices (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .header-content {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: var(--spacing-sm);
+        height: 56px;
+        padding: var(--spacing-xs) 0;
+    }
+
+    .logo {
+        flex: 1;
+        min-width: 200px;
+    }
+
+    .logo h1 {
+        font-size: 1.25rem;
+    }
+
+    .nav-tabs {
+        flex: 1;
+        min-width: 200px;
+        justify-content: center;
+        display: none; /* Hide on tablet as well */
+    }
+
+    .connect-wallet-btn {
+        flex: 0 0 auto;
+        font-size: 14px;
+    }
+
+    .section-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: var(--spacing-sm);
+    }
+
+    .section-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .rewards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .reward-actions {
+        grid-column: 1 / -1;
+        justify-content: center;
+    }
+
+    .inventory-grid,
+    .worldpool-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .empty-actions {
+        flex-direction: column;
+        align-items: center;
+        max-width: 400px;
+        margin: 0 auto var(--spacing-lg);
+    }
+
+    /* Show mobile bottom nav on tablets too */
+    .mobile-bottom-nav {
+        display: flex;
+    }
+}
+
+/* Tablet Devices (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .container {
+        max-width: 100%;
+        padding: 0 var(--spacing-md);
+    }
+
+    .header-content {
+        justify-content: space-between;
+        height: 64px;
+    }
+
+    .nav-tabs {
+        display: flex; /* Show nav tabs on desktop */
+    }
+
+    .rewards-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .reward-actions {
+        grid-column: 1 / -1;
+        justify-content: center;
+    }
+
+    .inventory-grid,
+    .worldpool-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .section-header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .mobile-bottom-nav {
+        display: none; /* Hide mobile nav on desktop */
+    }
+}
+
+/* Large Desktop (1025px - 1440px) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+    .container {
+        max-width: 1200px;
+    }
+
+    .nav-tabs {
+        display: flex;
+    }
+
+    .rewards-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .reward-actions {
+        grid-column: 4;
+        justify-content: flex-end;
+    }
+
+    .inventory-grid,
+    .worldpool-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .mobile-bottom-nav {
+        display: none;
+    }
+}
+
+/* Extra Large Desktop (1441px+) */
+@media (min-width: 1441px) {
+    .container {
+        max-width: 1400px;
+    }
+
+    .nav-tabs {
+        display: flex;
+    }
+
+    .rewards-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    .reward-actions {
+        grid-column: 5;
+        justify-content: flex-end;
+    }
+
+    .inventory-grid,
+    .worldpool-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    .section-header h2 {
+        font-size: 2rem;
+    }
+
+    .logo h1 {
+        font-size: 1.75rem;
+    }
+
+    .mobile-bottom-nav {
+        display: none;
+    }
+}
+
+/* Landscape Mobile Orientation */
+@media (max-height: 500px) and (orientation: landscape) {
+    .header {
+        position: relative;
+    }
+
+    .main-content {
+        padding: var(--spacing-sm) 0;
+        padding-bottom: 80px; /* Account for mobile nav */
+    }
+
+    .empty-state {
+        padding: var(--spacing-md);
+    }
+
+    .empty-icon {
+        font-size: 2rem;
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .empty-content h3 {
+        font-size: 1rem;
+        margin-bottom: var(--spacing-xs);
+    }
+
+    .empty-content p {
+        margin-bottom: var(--spacing-sm);
+        font-size: 13px;
+    }
+
+    .empty-actions {
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .rewards-panel {
+        padding: var(--spacing-sm);
+    }
+
+    .section-header {
+        margin-bottom: var(--spacing-sm);
+    }
+}
+
+/* High DPI Displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .logo h1 {
+        text-rendering: optimizeLegibility;
+    }
+
+    .btn:hover {
+        box-shadow: var(--shadow-glow);
+    }
+
+    .potion-card:hover {
+        box-shadow: var(--shadow-glow);
+    }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .btn {
+        min-height: 44px;
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
+
+    .nav-tab {
+        min-height: 44px;
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
+
+    .connect-wallet-btn {
+        min-height: 44px;
+    }
+
+    .potion-card {
+        cursor: default;
+    }
+
+    .potion-card:active {
+        transform: scale(0.98);
+    }
+
+    .mobile-nav-item {
+        min-height: 44px;
+        min-width: 44px;
+    }
+
+    /* Remove hover effects on touch devices */
+    .btn:hover {
+        background: var(--secondary);
+        border-color: var(--ring);
+    }
+
+    .btn:active {
+        transform: scale(0.98);
+    }
+
+    .potion-card:hover {
+        transform: none;
+        box-shadow: var(--shadow-sm);
+    }
+
+    .potion-card:active {
+        transform: scale(0.98);
+        box-shadow: var(--shadow-sm);
+    }
+}
+
+/* Reduced Motion Preferences */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .loading-spinner {
+        animation: none;
+        border: 2px solid var(--border);
+        border-top: 2px solid var(--foreground);
+    }
+
+    .progress-fill::after {
+        animation: none;
+    }
+
+    .modal-content {
+        animation: none;
+    }
+
+    .toast {
+        animation: none;
+    }
+}
+
+/* Dark Mode Support (maintain consistency) */
+@media (prefers-color-scheme: light) {
+    /* Keep dark theme as it matches azukigram design */
+    /* This ensures consistency regardless of system preference */
+}
+
+/* Print Styles */
+@media print {
+    .header,
+    .connect-wallet-btn,
+    .btn,
+    .modal,
+    .toast-container,
+    .loading-overlay,
+    .bottom-nav {
+        display: none !important;
+    }
+
+    body {
+        background: white !important;
+        color: black !important;
+    }
+
+    .section {
+        display: block !important;
+        page-break-inside: avoid;
+    }
+
+    .potion-card {
+        border: 1px solid #ccc !important;
+        background: white !important;
+        color: black !important;
+        break-inside: avoid;
+    }
+
+    .rewards-panel {
+        border: 1px solid #ccc !important;
+        background: white !important;
+        color: black !important;
+    }
+}
+
+/* Focus Styles for Accessibility */
+@media (prefers-reduced-motion: no-preference) {
+    .btn:focus,
+    .nav-tab:focus,
+    .connect-wallet-btn:focus,
+    .potion-card:focus,
+    .mobile-nav-item:focus {
+        outline: 2px solid var(--primary);
+        outline-offset: 2px;
+    }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+    :root {
+        --foreground: #FFFFFF;
+        --background: #000000;
+        --border: #FFFFFF;
+        --primary: #FFFFFF;
+        --secondary: #333333;
+    }
+
+    .btn {
+        border-width: 2px;
+    }
+
+    .potion-card {
+        border-width: 2px;
+    }
+
+    .rewards-panel {
+        border-width: 2px;
+    }
+
+    .bottom-nav {
+        border: 2px solid var(--border);
+    }
+}
+
+/* Safe Area Support for devices with notches */
+@supports (padding: max(0px)) {
+    .header-content {
+        padding-left: max(var(--spacing-sm), env(safe-area-inset-left));
+        padding-right: max(var(--spacing-sm), env(safe-area-inset-right));
+    }
+
+    .bottom-nav {
+        bottom: max(16px, env(safe-area-inset-bottom));
+        max-width: calc(100vw - max(32px, env(safe-area-inset-left) + env(safe-area-inset-right)));
+    }
+
+    .main-content {
+        padding-bottom: max(100px, calc(100px + env(safe-area-inset-bottom)));
+    }
+}
+
+/* Specific mobile breakpoints for better responsive behavior */
+@media (max-width: 375px) {
+    .logo h1 {
+        font-size: 1.1rem;
+    }
+
+    .section-header h2 {
+        font-size: 1.25rem;
+    }
+
+    .btn {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+}
+
+@media (min-width: 376px) and (max-width: 414px) {
+    .logo h1 {
+        font-size: 1.2rem;
+    }
+
+    .section-header h2 {
+        font-size: 1.4rem;
+    }
+}
+
+/* Tablet specific adjustments */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+    .inventory-grid,
+    .worldpool-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .rewards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    .inventory-grid,
+    .worldpool-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .rewards-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

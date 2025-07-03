@@ -1,0 +1,862 @@
+/* Modal Components */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-md);
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+}
+
+.modal-content {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    max-width: 800px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    z-index: 1001;
+    box-shadow: var(--shadow-lg);
+    animation: modalSlideIn 0.3s ease;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95) translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-md);
+    border-bottom: 1px solid var(--border);
+}
+
+.modal-header h3 {
+    font-family: var(--font-primary);
+    color: var(--foreground);
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.modal-close {
+    background: transparent;
+    border: none;
+    color: var(--muted-foreground);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color var(--transition-normal);
+    padding: 4px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-sm);
+}
+
+.modal-close:hover {
+    color: var(--foreground);
+    background: var(--secondary);
+}
+
+.modal-body {
+    padding: var(--spacing-md);
+}
+
+/* Potion Images Grid */
+.potion-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+}
+
+.potion-image {
+    aspect-ratio: 1;
+    background: var(--secondary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.potion-image:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow);
+    border-color: var(--ring);
+}
+
+.potion-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+}
+
+/* Potion Tags in Modal */
+.modal-body .potion-tags {
+    margin-bottom: var(--spacing-lg);
+}
+
+.modal-body .tag {
+    background: var(--secondary);
+    color: var(--secondary-foreground);
+    padding: 4px var(--spacing-sm);
+    border-radius: var(--radius-sm);
+    font-size: 13px;
+    font-weight: 500;
+    border: 1px solid var(--border);
+}
+
+/* Potion Actions */
+.potion-actions {
+    display: flex;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+    margin-bottom: var(--spacing-md);
+}
+
+.potion-actions .btn {
+    flex: 1;
+    min-width: 120px;
+    justify-content: center;
+    font-size: 13px;
+    padding: 10px 20px;
+    border-radius: var(--radius-md);
+}
+
+.potion-actions .btn-primary {
+    background: #ffffff;
+    color: #000000;
+    border-color: #ffffff;
+}
+
+.potion-actions .btn-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--foreground);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Text Input Section */
+.text-input-section {
+    margin-top: var(--spacing-md);
+    padding-top: var(--spacing-md);
+    border-top: 1px solid var(--border);
+}
+
+.text-input-section textarea {
+    width: 100%;
+    min-height: 100px;
+    background: var(--input);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-sm);
+    color: var(--foreground);
+    font-family: var(--font-primary);
+    font-size: 14px;
+    resize: vertical;
+    transition: all var(--transition-normal);
+}
+
+.text-input-section textarea:focus {
+    outline: none;
+    border-color: var(--ring);
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
+}
+
+.text-input-section textarea::placeholder {
+    color: var(--muted-foreground);
+    opacity: 0.7;
+}
+
+/* Toast Notifications */
+.toast-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 2000;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.toast {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-sm) var(--spacing-md);
+    color: var(--foreground);
+    font-family: var(--font-primary);
+    font-weight: 500;
+    font-size: 14px;
+    box-shadow: var(--shadow-md);
+    animation: toastSlideIn 0.3s ease;
+    max-width: 300px;
+    position: relative;
+    overflow: hidden;
+}
+
+.toast::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background: var(--primary);
+}
+
+.toast.success::before {
+    background: #22c55e;
+}
+
+.toast.error::before {
+    background: #ef4444;
+}
+
+.toast.warning::before {
+    background: #f59e0b;
+}
+
+@keyframes toastSlideIn {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.toast.removing {
+    animation: toastSlideOut 0.3s ease forwards;
+}
+
+@keyframes toastSlideOut {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+}
+
+/* Coin Icon */
+.coin-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    background: var(--primary);
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--primary-foreground);
+    margin-right: var(--spacing-xs);
+}
+
+.coin-icon::before {
+    content: '₭';
+}
+
+/* Wallet Connected State */
+.connect-wallet-btn.connected {
+    background: rgba(34, 197, 94, 0.9);
+    border: 1px solid rgba(34, 197, 94, 1);
+    color: #ffffff;
+    box-shadow: 0 2px 8px rgba(34, 197, 94, 0.3);
+}
+
+.connect-wallet-btn.connected:hover {
+    background: rgba(34, 197, 94, 1);
+    transform: scale(1.02);
+    box-shadow: 0 4px 16px rgba(34, 197, 94, 0.4);
+}
+
+.connect-wallet-btn.connected .wallet-icon::before {
+    content: '✓';
+}
+
+.connect-wallet-btn.connected::before {
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+}
+
+/* Staking Input Modal */
+.stake-modal .modal-body {
+    text-align: center;
+}
+
+.stake-input-group {
+    margin: var(--spacing-lg) 0;
+}
+
+.stake-input-group label {
+    display: block;
+    color: var(--muted-foreground);
+    margin-bottom: var(--spacing-xs);
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.stake-input {
+    width: 100%;
+    max-width: 300px;
+    padding: var(--spacing-sm);
+    background: var(--input);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    color: var(--foreground);
+    font-family: var(--font-primary);
+    font-size: 1.1rem;
+    text-align: center;
+    transition: all var(--transition-normal);
+}
+
+.stake-input:focus {
+    outline: none;
+    border-color: var(--ring);
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
+}
+
+.stake-balance {
+    color: var(--muted-foreground);
+    font-size: 13px;
+    margin-top: var(--spacing-xs);
+}
+
+.stake-actions {
+    display: flex;
+    gap: var(--spacing-sm);
+    justify-content: center;
+    margin-top: var(--spacing-lg);
+}
+
+/* Progress Bars */
+.progress-bar {
+    width: 100%;
+    height: 6px;
+    background: var(--secondary);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    margin: var(--spacing-xs) 0;
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--primary);
+    border-radius: var(--radius-sm);
+    transition: width var(--transition-slow);
+    position: relative;
+}
+
+.progress-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    animation: progressShimmer 2s infinite;
+}
+
+@keyframes progressShimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* Craft Potion Modal */
+.craft-modal .modal-content {
+    max-width: 600px;
+}
+
+.craft-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.craft-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.craft-input-group label {
+    color: var(--muted-foreground);
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.craft-input {
+    padding: var(--spacing-sm);
+    background: var(--input);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    color: var(--foreground);
+    font-family: var(--font-primary);
+    font-size: 14px;
+    transition: all var(--transition-normal);
+}
+
+.craft-input:focus {
+    outline: none;
+    border-color: var(--ring);
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
+}
+
+.craft-preview {
+    background: var(--secondary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    text-align: center;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+}
+
+.craft-cost {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-sm);
+    text-align: center;
+    color: var(--foreground);
+    font-weight: 500;
+    font-size: 14px;
+}
+
+/* Potion Details Styles */
+.potion-details {
+    margin-bottom: var(--spacing-md);
+}
+
+.potion-meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-sm);
+    background: var(--secondary);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    border: 1px solid var(--border);
+}
+
+.meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.meta-item.description {
+    grid-column: 1 / -1;
+}
+
+.meta-label {
+    color: var(--muted-foreground);
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.meta-item span:not(.meta-label) {
+    color: var(--foreground);
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.meta-item p {
+    color: var(--foreground);
+    margin: 0;
+    line-height: 1.5;
+    font-size: 14px;
+}
+
+/* Rarity Badges */
+.rarity-badge {
+    padding: 2px 8px;
+    border-radius: var(--radius-sm);
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.rarity-badge.common {
+    background: var(--secondary);
+    color: var(--muted-foreground);
+}
+
+.rarity-badge.rare {
+    background: rgba(59, 130, 246, 0.2);
+    color: #3b82f6;
+}
+
+.rarity-badge.legendary {
+    background: rgba(245, 158, 11, 0.2);
+    color: #f59e0b;
+}
+
+/* Potion Stats */
+.potion-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-xs);
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    font-size: 13px;
+    color: var(--muted-foreground);
+}
+
+.potion-earnings {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    margin-top: var(--spacing-xs);
+}
+
+.earning-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    font-size: 13px;
+    color: var(--muted-foreground);
+}
+
+/* Owned Badge */
+.owned-badge {
+    position: absolute;
+    top: var(--spacing-xs);
+    right: var(--spacing-xs);
+    background: var(--primary);
+    color: var(--primary-foreground);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 600;
+    box-shadow: var(--shadow-sm);
+}
+
+/* Selected Image */
+.potion-image.selected {
+    border: 2px solid var(--primary);
+    box-shadow: var(--shadow-glow);
+    transform: translateY(-2px);
+}
+
+/* Input Actions */
+.input-actions {
+    display: flex;
+    gap: var(--spacing-sm);
+    justify-content: flex-end;
+    margin-top: var(--spacing-sm);
+}
+
+/* Generation Result */
+.generation-result {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-md);
+    margin-top: var(--spacing-md);
+    animation: slideInUp 0.3s ease;
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.result-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-md);
+}
+
+.result-header h4 {
+    color: var(--foreground);
+    margin: 0;
+    font-family: var(--font-primary);
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.quality-badge {
+    background: var(--secondary);
+    color: var(--secondary-foreground);
+    padding: 4px var(--spacing-sm);
+    border-radius: var(--radius-sm);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.result-content {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.result-image {
+    width: 80px;
+    height: 80px;
+    background: var(--primary);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.result-details p {
+    margin: 4px 0;
+    color: var(--foreground);
+    font-size: 14px;
+}
+
+.result-actions {
+    display: flex;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+}
+
+/* Stake Modal Specific Styles */
+.stake-info h4 {
+    color: var(--foreground);
+    margin-bottom: var(--spacing-sm);
+    font-family: var(--font-primary);
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.stake-info p {
+    color: var(--muted-foreground);
+    margin-bottom: var(--spacing-md);
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+.stake-stats {
+    background: var(--secondary);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+    border: 1px solid var(--border);
+}
+
+.stat-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-xs) 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+}
+
+.stat-row:last-child {
+    border-bottom: none;
+}
+
+.stat-row .highlight {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+/* Comment Styles (inspired by azukigram) */
+.comment-wrapper {
+    position: relative;
+    padding-left: 45px;
+    margin-bottom: var(--spacing-md);
+}
+
+.avatar-human,
+.avatar-agent {
+    border-radius: 50%;
+    border: 1.5px solid var(--border);
+    overflow: hidden;
+    width: 33px;
+    height: 33px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.avatar-agent {
+    border-radius: 3px;
+}
+
+.comment-bubble-human,
+.comment-bubble-agent {
+    border-radius: 18px 18px 18px 4px;
+    padding: 12px 16px;
+    display: inline-block;
+    font-family: var(--font-primary);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.4;
+    max-width: 85%;
+}
+
+.comment-bubble-human {
+    background-color: var(--card);
+    color: var(--foreground);
+}
+
+.comment-bubble-agent {
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+}
+
+.user-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+    gap: 6px;
+    font-family: var(--font-primary);
+    margin-bottom: 4px;
+}
+
+.username {
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 1.3;
+    color: var(--foreground);
+}
+
+.timestamp {
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 1.3;
+    color: var(--muted-foreground);
+}
+
+.reply-button {
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 1.3;
+    color: var(--muted-foreground);
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: color var(--transition-normal);
+}
+
+.reply-button:hover {
+    color: var(--foreground);
+}
+
+/* Responsive Modal Adjustments */
+@media (max-width: 768px) {
+    .modal-content {
+        margin: var(--spacing-sm);
+        max-height: calc(100vh - 2rem);
+    }
+    
+    .potion-images {
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    }
+    
+    .potion-actions {
+        flex-direction: column;
+    }
+    
+    .potion-actions .btn {
+        flex: none;
+    }
+    
+    .toast-container {
+        left: 16px;
+        right: 16px;
+    }
+    
+    .toast {
+        max-width: none;
+    }
+    
+    .potion-meta {
+        grid-template-columns: 1fr;
+    }
+    
+    .result-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .result-actions {
+        justify-content: center;
+    }
+    
+    .input-actions {
+        justify-content: center;
+    }
+    
+    .comment-wrapper {
+        padding-left: 40px;
+    }
+    
+    .avatar-human,
+    .avatar-agent {
+        width: 28px;
+        height: 28px;
+    }
+}
