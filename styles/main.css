@@ -641,8 +641,9 @@ body {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
+    justify-content: space-between;
     padding: 0px;
-    gap: 80px;
+    gap: 20px;
     
     position: absolute;
     width: calc(100% - 60px);
@@ -809,16 +810,17 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 8px 12px 8px 8px;
+    padding: 10px 20px;
     gap: 4px;
     
-    height: 26px;
+    min-width: 80px;
     
-    /* Neutral/N7 */
-    background: #595959;
-    border-radius: 6px;
-    border: none;
+    /* Match World Pool claim button style */
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius-md);
     cursor: pointer;
+    backdrop-filter: blur(10px);
     
     /* Inside auto layout */
     flex: none;
@@ -829,6 +831,10 @@ body {
     overflow: hidden;
     z-index: 1;
     transition: all 0.15s ease-out;
+    
+    /* Match World Pool button typography */
+    font-size: 14px;
+    font-weight: 600;
 }
 
 .claim-button::before {
@@ -845,7 +851,9 @@ body {
 
 .claim-button:hover {
     color: #000000;
+    border-color: rgba(255, 255, 255, 0.3);
     transform: scale(1.02);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 .claim-button:hover::before {
@@ -862,13 +870,13 @@ body {
 
 /* Claim Button Text */
 .claim-text {
-    width: 42px;
-    height: 11px;
+    width: auto;
+    height: auto;
     
     font-family: 'Helvetica Neue';
     font-style: normal;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 125%;
     /* leading-trim and text-edge are draft CSS properties */
     display: flex;
@@ -951,6 +959,12 @@ body {
 .worldpool-stake-btn,
 .worldpool-claim-btn {
     min-width: 80px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#samplingBtn {
     padding: 10px 20px;
     font-size: 14px;
     font-weight: 600;
@@ -1448,7 +1462,5 @@ body.inventory-active {
 }
 
 body.worldpool-active {
-    background: radial-gradient(circle at top right, rgba(17, 70, 154, 0.4), transparent 35%),
-                radial-gradient(circle at bottom left, rgba(55, 13, 0, 0.2), transparent 45%),
-                var(--background);
+    background: #000000;
 }
