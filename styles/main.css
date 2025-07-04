@@ -255,10 +255,11 @@ body {
     color: #000000;
     font-family: var(--font-primary);
     font-weight: 600;
-    font-size: 14px;
+    font-size: 16px;
     padding: 8px 24px;
-    height: 38px;
-    border-radius: var(--radius-md);
+    width: 280px;
+    height: 36px;
+    border-radius: 6px;
     cursor: pointer;
     transition: all 0.15s ease-out;
     display: flex;
@@ -489,14 +490,14 @@ body {
     width: 134px;
     height: 26px;
     background: #FFFFFF;
-    border-radius: 18px;
+    border-radius: 6px;
     flex: none;
     order: 1;
     flex-grow: 0;
     font-family: 'Helvetica Neue';
     font-style: normal;
-    font-weight: 500;
-    font-size: 20px;
+    font-weight: 600;
+    font-size: 16px;
     line-height: 125%;
     text-transform: capitalize;
     color: #000000;
@@ -830,7 +831,7 @@ body {
     
     /* Neutral/N7 */
     background: #595959;
-    border-radius: 8px;
+    border-radius: 6px;
     border: none;
     cursor: pointer;
     
@@ -881,8 +882,8 @@ body {
     
     font-family: 'Helvetica Neue';
     font-style: normal;
-    font-weight: 700;
-    font-size: 15px;
+    font-weight: 600;
+    font-size: 16px;
     line-height: 125%;
     /* leading-trim and text-edge are draft CSS properties */
     display: flex;
