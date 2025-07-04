@@ -205,7 +205,7 @@ body {
     font-weight: 700;
     line-height: 125%;
     border-radius: 13.512px;
-    background: linear-gradient(90deg, #370D00 0%, rgba(17, 70, 154, 0.76) 100%);
+    background: linear-gradient(90deg, #370D00 0%, rgba(142, 142, 142, 0.76) 100%);
     background-blend-mode: screen;
     box-shadow: 3.314px 3.314px 26.514px 0px rgba(255, 255, 255, 0.30) inset, -3.314px -3.314px 26.514px 0px rgba(255, 255, 255, 0.30) inset;
     backdrop-filter: blur(19.885713577270508px);
@@ -635,7 +635,9 @@ body {
     width: 736px;
     height: 191px; /* Match inventory video height exactly */
     flex-shrink: 0;
-    background: #222222;
+    background-color: #222;
+    box-shadow: 0px 4px 4px 0px rgba(97, 97, 97, 0.25) inset;
+    backdrop-filter: blur(29.443470001220703px);
     padding: 0; /* Remove all padding */
     margin-bottom: 0; /* Remove margin to fix alignment */
     position: relative;
@@ -930,6 +932,9 @@ body {
     max-width: 961px;
     margin-left: auto;
     margin-right: auto;
+    background-color: #222;
+    box-shadow: 0px 4px 4px 0px rgba(97, 97, 97, 0.25) inset;
+    backdrop-filter: blur(29.443470001220703px);
 }
 
 /* Potion Cards */
@@ -998,7 +1003,9 @@ body {
 .empty-state {
     text-align: center;
     padding: var(--spacing-xl) var(--spacing-md);
-    background: var(--card);
+    background-color: #222;
+    box-shadow: 0px 4px 4px 0px rgba(97, 97, 97, 0.25) inset;
+    backdrop-filter: blur(29.443470001220703px);
     border: 1px dashed var(--border);
     border-radius: var(--radius-lg);
     margin: 0; /* Remove extra margins to use flexbox gap for consistent spacing */
@@ -1360,9 +1367,7 @@ body {
 
 /* Tab-specific body styles */
 body.inventory-active {
-    background: radial-gradient(circle at top left, rgba(55, 13, 0, 0.5), transparent 30%),
-                radial-gradient(circle at bottom right, rgba(17, 70, 154, 0.3), transparent 40%),
-                var(--background);
+    background: var(--background);
 }
 
 body.worldpool-active {
