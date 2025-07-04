@@ -180,6 +180,7 @@ class InventoryManager {
             </div>
         `;
         
+        
         // Add click event to show details
         card.addEventListener('click', () => this.showPotionDetails(potion));
         
