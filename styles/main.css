@@ -648,14 +648,257 @@ body {
     z-index: -1;
 }
 
-.rewards-panel h3 {
-    font-family: var(--font-primary);
-    color: var(--foreground);
-    margin-bottom: var(--spacing-md);
-    font-size: 1.1rem;
-    font-weight: 600;
+/* Rewards Content - Main container following Figma specs */
+.rewards-content {
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 80px;
+    
+    position: absolute;
+    width: 674px;
+    height: 124.98px;
+    left: 30px;
+    top: 33.01px;
 }
 
+/* Rewards Details Container */
+.rewards-details {
+    /* Auto layout */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 44px;
+    
+    width: 369px;
+    height: 106px;
+    
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+/* Rewards Title */
+.rewards-title {
+    width: 85px;
+    height: 14px;
+    
+    font-family: 'Helvetica Neue';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 125%;
+    /* leading-trim and text-edge are draft CSS properties */
+    display: flex;
+    align-items: center;
+    text-transform: capitalize;
+    
+    /* Neutral/N0 */
+    color: #FFFFFF;
+    margin: 0;
+    
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+/* Rewards Stats Container */
+.rewards-stats {
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 38px;
+    
+    width: 369px;
+    height: 48px;
+    
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+/* Individual Reward Stat Item */
+.reward-stat-item {
+    /* Auto layout */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 26px;
+    
+    height: 48px;
+    
+    /* Inside auto layout */
+    flex: none;
+    flex-grow: 0;
+}
+
+.reward-stat-item:nth-child(1) {
+    width: 84px;
+    order: 0;
+}
+
+.reward-stat-item:nth-child(2) {
+    width: 108px;
+    order: 1;
+}
+
+.reward-stat-item:nth-child(3) {
+    width: 101px;
+    order: 2;
+}
+
+/* Reward Labels */
+.reward-label {
+    height: 11px;
+    
+    font-family: 'Helvetica Neue';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 125%;
+    /* leading-trim and text-edge are draft CSS properties */
+    display: flex;
+    align-items: center;
+    text-transform: capitalize;
+    
+    /* Neutral/N6 */
+    color: #8C8C8C;
+    
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.reward-stat-item:nth-child(1) .reward-label {
+    width: 84px;
+}
+
+.reward-stat-item:nth-child(2) .reward-label {
+    width: 108px;
+}
+
+.reward-stat-item:nth-child(3) .reward-label {
+    width: 101px;
+}
+
+/* Reward Values */
+.reward-value {
+    width: 9px;
+    height: 11px;
+    
+    font-family: 'Helvetica Neue';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 125%;
+    /* leading-trim and text-edge are draft CSS properties */
+    display: flex;
+    align-items: center;
+    text-transform: capitalize;
+    
+    /* Neutral/N0 */
+    color: #FFFFFF;
+    
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+/* Claim Button */
+.claim-button {
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 12px 8px 8px;
+    gap: 4px;
+    
+    width: 134px;
+    height: 26px;
+    
+    /* Neutral/N7 */
+    background: #595959;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: all 0.15s ease-out;
+}
+
+.claim-button::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    transition: transform 0.3s ease;
+    z-index: -1;
+}
+
+.claim-button:hover {
+    color: #000000;
+    transform: scale(1.02);
+}
+
+.claim-button:hover::before {
+    transform: translateY(-100%);
+}
+
+.claim-button:hover .claim-text {
+    color: #000000;
+}
+
+.claim-button:active {
+    transform: scale(0.98);
+}
+
+/* Claim Button Text */
+.claim-text {
+    width: 42px;
+    height: 11px;
+    
+    font-family: 'Helvetica Neue';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 125%;
+    /* leading-trim and text-edge are draft CSS properties */
+    display: flex;
+    align-items: center;
+    text-transform: capitalize;
+    
+    /* Neutral/N0 */
+    color: #FFFFFF;
+    
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+/* Legacy styles for other rewards panels */
 .rewards-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -667,19 +910,6 @@ body {
     display: flex;
     flex-direction: column;
     gap: 4px;
-}
-
-.reward-label {
-    color: var(--muted-foreground);
-    font-size: 13px;
-    font-weight: 400;
-}
-
-.reward-value {
-    color: var(--foreground);
-    font-family: var(--font-primary);
-    font-size: 1rem;
-    font-weight: 600;
 }
 
 .reward-actions {
@@ -965,10 +1195,9 @@ body {
         position: static;
         width: calc(100vw - 2rem);
         max-width: 736px;
-        height: calc((100vw - 2rem) * 162 / 736);
-        max-height: 162px;
-        min-height: 100px;
-        padding: calc(var(--spacing-md) * 0.8);
+        height: calc((100vw - 2rem) * 191 / 736);
+        max-height: 191px;
+        min-height: 120px;
         transform-origin: center;
         margin: var(--spacing-md) auto;
     }
@@ -977,24 +1206,77 @@ body {
         background-size: 100% 100%;
     }
     
+    /* Mobile responsive rewards content */
+    .rewards-content {
+        position: absolute;
+        width: calc(100% - 40px);
+        height: auto;
+        left: 20px;
+        top: 20px;
+        gap: 20px;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .rewards-details {
+        width: 100%;
+        height: auto;
+        gap: 16px;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .rewards-title {
+        width: auto;
+        height: auto;
+        font-size: 16px;
+    }
+    
+    .rewards-stats {
+        width: 100%;
+        height: auto;
+        gap: 16px;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+    
+    .reward-stat-item {
+        width: auto !important;
+        min-width: 60px;
+        gap: 8px;
+        align-items: center;
+    }
+    
+    .reward-label {
+        width: auto !important;
+        height: auto;
+        font-size: 11px;
+        text-align: center;
+    }
+    
+    .reward-value {
+        width: auto !important;
+        height: auto;
+        font-size: 13px;
+    }
+    
+    .claim-button {
+        width: 100px;
+        height: 24px;
+        font-size: 13px;
+    }
+    
+    .claim-text {
+        width: auto;
+        height: auto;
+        font-size: 13px;
+    }
+    
     /* Maintain existing grid layout but adjust for smaller space */
     .rewards-grid {
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
         gap: var(--spacing-sm);
         align-items: center;
-    }
-    
-    .reward-label {
-        font-size: 12px;
-    }
-    
-    .reward-value {
-        font-size: 14px;
-    }
-    
-    .rewards-panel h3 {
-        font-size: 1rem;
-        margin-bottom: var(--spacing-sm);
     }
 }
 

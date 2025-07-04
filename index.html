@@ -58,23 +58,27 @@
                     <!-- Rewards Column -->
                     <div class="rewards-column">
                         <div class="rewards-panel inventory-rewards">
-                            <h3>Rewards</h3>
-                            <div class="rewards-grid">
-                                <div class="reward-item">
-                                    <span class="reward-label">$KAI Earned</span>
-                                    <span class="reward-value" id="kaiEarned">0</span>
+                            <div class="rewards-content">
+                                <div class="rewards-details">
+                                    <h3 class="rewards-title">Rewards</h3>
+                                    <div class="rewards-stats">
+                                        <div class="reward-stat-item">
+                                            <span class="reward-label">$KAI Earned</span>
+                                            <span class="reward-value" id="kaiEarned">0</span>
+                                        </div>
+                                        <div class="reward-stat-item">
+                                            <span class="reward-label">Unclaimed $KAI</span>
+                                            <span class="reward-value" id="unclaimedKai">0</span>
+                                        </div>
+                                        <div class="reward-stat-item">
+                                            <span class="reward-label">Daily Expected</span>
+                                            <span class="reward-value" id="dailyExpected">0</span>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="reward-item">
-                                    <span class="reward-label">Unclaimed $KAI</span>
-                                    <span class="reward-value" id="unclaimedKai">0</span>
-                                </div>
-                                <div class="reward-item">
-                                    <span class="reward-label">Daily Expected</span>
-                                    <span class="reward-value" id="dailyExpected">0</span>
-                                </div>
-                                <div class="reward-item">
-                                    <button class="btn btn-secondary" id="claimInventoryBtn">Claim</button>
-                                </div>
+                                <button class="claim-button" id="claimInventoryBtn">
+                                    <span class="claim-text">Claim</span>
+                                </button>
                             </div>
                         </div>
                     </div>
