@@ -340,7 +340,6 @@ body {
     max-width: 1200px;
     min-height: 253px;
     margin: 0 auto;
-    gap: var(--spacing-md);
 }
 
 .inventory-section:not(.active) {
@@ -360,7 +359,7 @@ body {
     flex: none;
     order: 0;
     flex-grow: 0;
-    margin: 0 auto;
+    margin: 0 auto var(--spacing-lg);
 }
 
 .section-header h2 {
@@ -391,7 +390,7 @@ body {
     gap: var(--spacing-lg);
     width: 100%;
     height: 191px;
-    margin: 0 auto;
+    margin: 0 auto var(--spacing-md);
 }
 
 .inventory-video-column {
