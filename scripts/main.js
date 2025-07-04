@@ -143,6 +143,10 @@ class PotionCraftApp {
         // Update current tab
         this.currentTab = tabName;
         
+        // Update body class
+        document.body.classList.remove('inventory-active', 'worldpool-active');
+        document.body.classList.add(`${tabName}-active`);
+
         // Handle tab-specific logic
         this.handleTabSwitch(tabName);
         

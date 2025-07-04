@@ -66,6 +66,7 @@ body {
     min-height: 100vh;
     overflow-x: hidden;
     font-weight: 400;
+    transition: background var(--transition-normal);
 }
 
 /* Container */
@@ -632,24 +633,13 @@ body {
     width: 736px;
     height: 191px; /* Match inventory video height exactly */
     flex-shrink: 0;
-    background: transparent;
+    background: #222222;
     padding: 0; /* Remove all padding */
     margin-bottom: 0; /* Remove margin to fix alignment */
     position: relative;
     overflow: hidden; /* Prevent content overflow */
     box-sizing: border-box;
-}
-
-.rewards-panel::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url("../images/rewards_panel_background.svg") no-repeat center center;
-    background-size: 100% 100%;
-    z-index: -1;
+    border-radius: 18px;
 }
 
 /* Rewards Content - Main container following Figma specs */
@@ -1354,4 +1344,17 @@ body {
     .reward-value {
         font-size: 12px;
     }
+}
+
+/* Tab-specific body styles */
+body.inventory-active {
+    background: radial-gradient(circle at top left, rgba(55, 13, 0, 0.5), transparent 30%),
+                radial-gradient(circle at bottom right, rgba(17, 70, 154, 0.3), transparent 40%),
+                var(--background);
+}
+
+body.worldpool-active {
+    background: radial-gradient(circle at top right, rgba(17, 70, 154, 0.4), transparent 35%),
+                radial-gradient(circle at bottom left, rgba(55, 13, 0, 0.2), transparent 45%),
+                var(--background);
 }
