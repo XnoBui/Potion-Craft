@@ -335,16 +335,13 @@ body {
 .inventory-section {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center; /* Center align items */
     padding: 0px;
-    gap: 160px; /* Increase gap to 160px for larger spacing between header and video+rewards */
+    gap: 34px; /* Reduce gap for better spacing */
     width: 100%;
     max-width: 1200px;
     min-height: 253px;
     margin: 0 auto;
-    flex: none;
-    order: 0;
-    flex-grow: 0;
 }
 
 .inventory-section:not(.active) {
@@ -397,9 +394,6 @@ body {
     width: 100%;
     max-width: 961px;
     height: 191px;
-    flex: none;
-    order: 1;
-    flex-grow: 0;
     margin: 0 auto;
 }
 
@@ -929,12 +923,6 @@ body {
 /* Add specific spacing for inventory grid */
 .inventory-grid {
     margin-top: 34px; /* Add 34px spacing from rewards container */
-    max-width: 961px;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: #222;
-    box-shadow: 0px 4px 4px 0px rgba(97, 97, 97, 0.25) inset;
-    backdrop-filter: blur(29.443470001220703px);
 }
 
 /* Potion Cards */
