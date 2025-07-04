@@ -317,7 +317,7 @@ class PotionCraftApp {
         
         if (!hasSeenWelcome && window.walletManager) {
             setTimeout(() => {
-                window.walletManager.showToast('Welcome to Potion Craft! Connect your wallet to start your alchemical journey.', 'info');
+                window.walletManager.showToast('Welcome to Potion Craft! Connect Your Wallet to start your alchemical journey.', 'info');
                 localStorage.setItem('potioncraft_welcome_seen', 'true');
             }, 1000);
         }

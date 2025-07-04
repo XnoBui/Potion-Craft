@@ -329,38 +329,71 @@ body {
     to { opacity: 1; transform: translateY(0); }
 }
 
+/* Main Inventory Container - Frame 2147236885 */
+.inventory-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 36px;
+    width: 961px;
+    min-height: 253px;
+    margin: 0 auto;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.inventory-section:not(.active) {
+    display: none;
+}
+
+/* Header Container - Frame 2147236883 */
 .section-header {
     display: flex;
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
-    margin-bottom: var(--spacing-lg);
-    flex-wrap: wrap;
-    gap: var(--spacing-md);
-    position: relative;
+    padding: 0px;
+    gap: 34px;
+    width: 359px;
+    height: 44px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
 }
 
 .section-header h2 {
-    font-family: var(--font-primary);
-    font-size: 24px;
+    width: 191px;
+    height: 44px;
+    font-family: 'Helvetica Neue';
+    font-style: normal;
     font-weight: 700;
-    color: var(--foreground);
-    letter-spacing: -0.02em;
+    font-size: 24px;
+    line-height: 125%;
     display: flex;
     align-items: center;
-    gap: var(--spacing-xs);
-    position: absolute;
-    left: 182.5px;
-    top: 162.5px;
-    text-transform: lowercase;
+    text-transform: capitalize;
+    color: #FFFFFF;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0;
 }
 
-/* Inventory Video and Rewards Container */
+/* Inventory Video and Rewards Container - Frame 2147236882 */
 .inventory-rewards-container {
     display: flex;
-    align-items: flex-end; /* Align bottom edges */
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 0px;
     gap: 34px;
-    margin-top: 200px;
-    margin-bottom: var(--spacing-lg);
+    width: 961px;
+    height: 191px;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
 }
 
 .inventory-video-column {
@@ -397,9 +430,8 @@ body {
 
 /* Inventory Actions Positioning */
 .inventory-actions {
-    position: absolute;
-    left: 397px;
-    top: 163px;
+    display: flex;
+    align-items: center;
 }
 
 /* Buttons */
@@ -444,6 +476,30 @@ body {
     position: relative;
     overflow: hidden;
     z-index: 1;
+}
+
+/* Craft Button Specific Styling */
+#craftBtn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 12px 8px 8px;
+    gap: 4px;
+    width: 134px;
+    height: 26px;
+    background: #FFFFFF;
+    border-radius: 18px;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    font-family: 'Helvetica Neue';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 125%;
+    text-transform: capitalize;
+    color: #000000;
 }
 
 .btn-primary::before {

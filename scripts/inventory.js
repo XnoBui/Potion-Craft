@@ -94,8 +94,8 @@ class InventoryManager {
         if (emptyContent) {
             emptyContent.innerHTML = `
                 <div class="empty-icon">🔗</div>
-                <h3>Connect your wallet</h3>
-                <p>Connect your wallet to view your potion inventory</p>
+                <h3>Connect Your Wallet</h3>
+                <p>Connect Your Wallet to view your potion inventory</p>
                 <div class="empty-rewards">
                     <p>Start earning by obtaining Potions</p>
                 </div>
