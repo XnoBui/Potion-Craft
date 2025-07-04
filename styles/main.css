@@ -340,6 +340,7 @@ body {
     max-width: 1200px;
     min-height: 253px;
     margin: 0 auto;
+    gap: var(--spacing-md);
 }
 
 .inventory-section:not(.active) {
@@ -353,13 +354,13 @@ body {
     justify-content: flex-start;
     align-items: center;
     padding: 0px;
-    gap: 34px;
+    gap: var(--spacing-lg);
     width: 100%;
     height: 44px;
     flex: none;
     order: 0;
     flex-grow: 0;
-    margin: 0 auto 24px;
+    margin: 0 auto;
 }
 
 .section-header h2 {
@@ -387,10 +388,10 @@ body {
     justify-content: center;
     align-items: flex-end;
     padding: 0px;
-    gap: 34px;
+    gap: var(--spacing-lg);
     width: 100%;
     height: 191px;
-    margin: 0 auto 12px;
+    margin: 0 auto;
 }
 
 .inventory-video-column {
@@ -910,8 +911,7 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: var(--spacing-md);
-    margin-bottom: var(--spacing-lg);
-    margin-top: 0; /* Remove margin-top to use flexbox gap for consistent spacing */
+    margin: 0; /* Remove margin-top to use flexbox gap for consistent spacing */
 }
 
 /* Add specific spacing for inventory grid */
