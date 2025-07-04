@@ -355,15 +355,17 @@ body {
 .section-header {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     padding: 0px;
     gap: 34px;
-    width: 359px;
+    width: 100%;
+    max-width: 961px;
     height: 44px;
     flex: none;
     order: 0;
     flex-grow: 0;
+    margin: 0 auto;
 }
 
 .section-header h2 {
@@ -925,6 +927,9 @@ body {
 /* Add specific spacing for inventory grid */
 .inventory-grid {
     margin-top: 34px; /* Add 34px spacing from rewards container */
+    max-width: 961px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Potion Cards */
@@ -997,6 +1002,13 @@ body {
     border: 1px dashed var(--border);
     border-radius: var(--radius-lg);
     margin: 0; /* Remove extra margins to use flexbox gap for consistent spacing */
+}
+
+#inventoryEmptyState {
+    max-width: 961px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 34px;
 }
 
 .empty-icon {
