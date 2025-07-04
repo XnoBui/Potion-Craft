@@ -336,7 +336,7 @@ body {
     flex-direction: column;
     align-items: flex-start;
     padding: 0px;
-    gap: 36px;
+    gap: 160px; /* Increase gap to 160px for larger spacing between header and video+rewards */
     width: 961px;
     min-height: 253px;
     margin: 0 auto;
@@ -926,7 +926,7 @@ body {
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: var(--spacing-md);
     margin-bottom: var(--spacing-lg);
-    margin-top: var(--spacing-lg); /* Reduced margin since we're using flex layout now */
+    margin-top: 0; /* Remove margin-top to use flexbox gap for consistent spacing */
 }
 
 /* Potion Cards */
@@ -991,7 +991,7 @@ body {
     background: var(--card);
     border: 1px dashed var(--border);
     border-radius: var(--radius-lg);
-    margin: var(--spacing-lg) 0;
+    margin: 0; /* Remove extra margins to use flexbox gap for consistent spacing */
 }
 
 .empty-icon {
