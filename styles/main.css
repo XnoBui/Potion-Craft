@@ -316,6 +316,8 @@ body {
 .section {
     display: none;
     animation: fadeIn 0.3s ease;
+    position: relative;
+    min-height: 600px;
 }
 
 .section.active {
@@ -334,35 +336,70 @@ body {
     margin-bottom: var(--spacing-lg);
     flex-wrap: wrap;
     gap: var(--spacing-md);
+    position: relative;
 }
 
 .section-header h2 {
     font-family: var(--font-primary);
-    font-size: 18px;
+    font-size: 24px;
     font-weight: 700;
     color: var(--foreground);
     letter-spacing: -0.02em;
     display: flex;
     align-items: center;
     gap: var(--spacing-xs);
+    position: absolute;
+    left: 182.5px;
+    top: 162.5px;
+    text-transform: lowercase;
+}
+
+/* Inventory Video and Rewards Container */
+.inventory-rewards-container {
+    display: flex;
+    align-items: flex-end; /* Align bottom edges */
+    gap: 34px;
+    margin-top: 200px;
+    margin-bottom: var(--spacing-lg);
+}
+
+.inventory-video-column {
+    flex: 0 0 auto;
 }
 
 .section-icon {
     font-size: 1.5rem;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    display: block; /* Change from inline-flex to block to remove extra spacing */
+    position: relative;
+    width: 191px; /* Set exact width to match video */
+    height: 191px; /* Set exact height to match video */
 }
 
 .section-icon-img {
-    width: 40px;
-    height: 40px;
+    width: 191px;
+    height: 191px;
+    aspect-ratio: 1/1;
+    border-radius: 20px;
+    display: block; /* Ensure video takes full container space */
+}
+
+.rewards-column {
+    flex: 1;
+    margin: 0; /* Remove any margins */
+    padding: 0; /* Remove any padding */
 }
 
 .section-description {
     color: var(--muted-foreground);
     font-size: 14px;
     margin-top: 4px;
+}
+
+/* Inventory Actions Positioning */
+.inventory-actions {
+    position: absolute;
+    left: 397px;
+    top: 163px;
 }
 
 /* Buttons */
@@ -533,15 +570,14 @@ body {
 /* Rewards Panel */
 .rewards-panel {
     width: 736px;
-    height: 162px;
+    height: 191px; /* Match inventory video height exactly */
     flex-shrink: 0;
     background: transparent;
-    padding: var(--spacing-md);
-    margin-bottom: var(--spacing-lg);
+    padding: 0; /* Remove all padding */
+    margin-bottom: 0; /* Remove margin to fix alignment */
     position: relative;
-    overflow: visible;
-    margin-left: auto;
-    margin-right: auto;
+    overflow: hidden; /* Prevent content overflow */
+    box-sizing: border-box;
 }
 
 .rewards-panel::before {
@@ -603,6 +639,7 @@ body {
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: var(--spacing-md);
     margin-bottom: var(--spacing-lg);
+    margin-top: var(--spacing-lg); /* Reduced margin since we're using flex layout now */
 }
 
 /* Potion Cards */
@@ -813,16 +850,44 @@ body {
         flex-direction: column;
         align-items: flex-start;
         gap: var(--spacing-sm);
+        position: relative;
     }
     
     .section-header h2 {
-        font-size: 16px;
+        font-size: 18px;
+        position: static;
+        text-transform: none;
+        margin-bottom: var(--spacing-sm);
+    }
+    
+    /* Mobile responsive for inventory-rewards-container */
+    .inventory-rewards-container {
+        flex-direction: column;
+        gap: var(--spacing-md);
+        margin-top: var(--spacing-lg);
+    }
+    
+    .section-icon {
+        position: static;
+        margin-bottom: var(--spacing-sm);
+    }
+    
+    .section-icon-img {
+        width: 80px;
+        height: 80px;
+        aspect-ratio: 1/1;
+    }
+    
+    .inventory-actions {
+        position: static;
+        margin-bottom: var(--spacing-md);
     }
     
     .inventory-grid,
     .worldpool-grid {
         grid-template-columns: 1fr;
         gap: var(--spacing-sm);
+        margin-top: var(--spacing-lg);
     }
     
     .rewards-grid {
@@ -841,6 +906,7 @@ body {
     
     /* Responsive Rewards Panel - Scale down proportionally */
     .rewards-panel {
+        position: static;
         width: calc(100vw - 2rem);
         max-width: 736px;
         height: calc((100vw - 2rem) * 162 / 736);
@@ -848,6 +914,7 @@ body {
         min-height: 100px;
         padding: calc(var(--spacing-md) * 0.8);
         transform-origin: center;
+        margin: var(--spacing-md) auto;
     }
     
     .rewards-panel::before {

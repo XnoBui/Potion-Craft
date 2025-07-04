@@ -33,41 +33,48 @@
             <!-- Inventory Section -->
             <section class="section inventory-section active" id="inventory">
                 <div class="section-header">
-                    <h2>
-                        <span class="section-icon">
-                            <video autoplay muted loop class="section-icon-img">
-                                <source src="images/inventory.mp4" type="video/mp4">
-                                📦
-                            </video>
-                        </span>
-                        Your Inventory
-                    </h2>
+                    <h2>Your Inventory</h2>
                     <div class="inventory-actions">
-                        <button class="btn btn-primary" id="craftBtn">
+                        <button class="btn btn-primary" id="craftBtn" style="height: 38px;">
                             <span class="btn-icon">🧪</span>
                             Craft
                         </button>
                     </div>
                 </div>
 
-                <!-- Inventory Rewards -->
-                <div class="rewards-panel inventory-rewards">
-                    <h3>Rewards</h3>
-                    <div class="rewards-grid">
-                        <div class="reward-item">
-                            <span class="reward-label">$KAI Earned</span>
-                            <span class="reward-value" id="kaiEarned">0</span>
-                        </div>
-                        <div class="reward-item">
-                            <span class="reward-label">Unclaimed $KAI</span>
-                            <span class="reward-value" id="unclaimedKai">0</span>
-                        </div>
-                        <div class="reward-item">
-                            <span class="reward-label">Daily Expected</span>
-                            <span class="reward-value" id="dailyExpected">0</span>
-                        </div>
-                        <div class="reward-item">
-                            <button class="btn btn-secondary" id="claimInventoryBtn">Claim</button>
+                <!-- Inventory Video and Rewards Container -->
+                <div class="inventory-rewards-container">
+                    <!-- Inventory Video Column -->
+                    <div class="inventory-video-column">
+                        <span class="section-icon">
+                            <video autoplay muted loop class="section-icon-img">
+                                <source src="images/inventory.mp4" type="video/mp4">
+                                📦
+                            </video>
+                        </span>
+                    </div>
+                    
+                    <!-- Rewards Column -->
+                    <div class="rewards-column">
+                        <div class="rewards-panel inventory-rewards">
+                            <h3>Rewards</h3>
+                            <div class="rewards-grid">
+                                <div class="reward-item">
+                                    <span class="reward-label">$KAI Earned</span>
+                                    <span class="reward-value" id="kaiEarned">0</span>
+                                </div>
+                                <div class="reward-item">
+                                    <span class="reward-label">Unclaimed $KAI</span>
+                                    <span class="reward-value" id="unclaimedKai">0</span>
+                                </div>
+                                <div class="reward-item">
+                                    <span class="reward-label">Daily Expected</span>
+                                    <span class="reward-value" id="dailyExpected">0</span>
+                                </div>
+                                <div class="reward-item">
+                                    <button class="btn btn-secondary" id="claimInventoryBtn">Claim</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
