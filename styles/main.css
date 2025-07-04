@@ -205,7 +205,7 @@ body {
     font-weight: 700;
     line-height: 125%;
     border-radius: 13.512px;
-    background: #000000;
+    background: linear-gradient(90deg, #370D00 0%, rgba(142, 142, 142, 0.76) 100%);
     background-blend-mode: screen;
     box-shadow: 3.314px 3.314px 26.514px 0px rgba(255, 255, 255, 0.30) inset, -3.314px -3.314px 26.514px 0px rgba(255, 255, 255, 0.30) inset;
     backdrop-filter: blur(19.885713577270508px);
@@ -481,9 +481,8 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 8px 12px 8px 8px;
+    padding: 10px 20px;
     gap: 4px;
-    height: 26px;
     background: #FFFFFF;
     border-radius: 6px;
     flex: none;
@@ -496,6 +495,7 @@ body {
     line-height: 125%;
     text-transform: capitalize;
     color: #000000;
+    min-width: 80px;
 }
 
 .btn-primary::before {
@@ -517,6 +517,17 @@ body {
 }
 
 .btn-primary:hover::before {
+    transform: translateY(-100%);
+}
+
+/* Craft Button Hover - White Text */
+#craftBtn:hover {
+    color: #ffffff;
+    transform: scale(1.02);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+#craftBtn:hover::before {
     transform: translateY(-100%);
 }
 
@@ -1073,7 +1084,6 @@ body {
     background-color: #222;
     box-shadow: 0px 4px 4px 0px rgba(97, 97, 97, 0.25) inset;
     backdrop-filter: blur(29.443470001220703px);
-    border: 1px dashed var(--border);
     border-radius: var(--radius-lg);
     margin: 0; /* Remove extra margins to use flexbox gap for consistent spacing */
 }
