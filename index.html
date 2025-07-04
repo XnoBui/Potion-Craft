@@ -129,27 +129,31 @@
 
                 <!-- World Pool Rewards -->
                 <div class="rewards-panel worldpool-rewards">
-                    <h3>Staking Rewards</h3>
-                    <div class="rewards-grid">
-                        <div class="reward-item">
-                            <span class="reward-label">Total $KAI Earned</span>
-                            <span class="reward-value" id="totalKaiEarned">1,234,567</span>
+                    <div class="worldpool-rewards-content">
+                        <div class="worldpool-rewards-details">
+                            <h3 class="worldpool-rewards-title">Staking Rewards</h3>
+                            <div class="worldpool-rewards-stats">
+                                <div class="worldpool-reward-stat-item">
+                                    <span class="reward-label">Total SKAI Earned</span>
+                                    <span class="reward-value" id="totalKaiEarned">1,234,567</span>
+                                </div>
+                                <div class="worldpool-reward-stat-item">
+                                    <span class="reward-label">Total KAI Staked</span>
+                                    <span class="reward-value" id="totalKaiStaked">10,000,000</span>
+                                </div>
+                                <div class="worldpool-reward-stat-item">
+                                    <span class="reward-label">Your Stake</span>
+                                    <span class="reward-value" id="userStake">0 (0%)</span>
+                                </div>
+                                <div class="worldpool-reward-stat-item">
+                                    <span class="reward-label">Your Share</span>
+                                    <span class="reward-value" id="userShare">0</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="reward-item">
-                            <span class="reward-label">Total KAI Staked</span>
-                            <span class="reward-value" id="totalKaiStaked">10,000,000</span>
-                        </div>
-                        <div class="reward-item">
-                            <span class="reward-label">Your Stake</span>
-                            <span class="reward-value" id="userStake">0 (0%)</span>
-                        </div>
-                        <div class="reward-item">
-                            <span class="reward-label">Your Share</span>
-                            <span class="reward-value" id="userShare">0</span>
-                        </div>
-                        <div class="reward-actions">
-                            <button class="btn btn-primary" id="stakeBtn">Stake</button>
-                            <button class="btn btn-secondary" id="claimWorldPoolBtn">Claim</button>
+                        <div class="worldpool-reward-actions">
+                            <button class="btn btn-primary worldpool-stake-btn" id="stakeBtn">Stake</button>
+                            <button class="btn btn-secondary worldpool-claim-btn" id="claimWorldPoolBtn">Claim</button>
                         </div>
                     </div>
                 </div>
