@@ -921,7 +921,7 @@ body {
 .worldpool-reward-stat-item {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-xs);
+    gap: calc(var(--spacing-xs) * 2);
     min-width: 140px;
 }
 
