@@ -205,7 +205,7 @@ body {
     font-weight: 700;
     line-height: 125%;
     border-radius: 13.512px;
-    background: linear-gradient(90deg, #370D00 0%, rgba(142, 142, 142, 0.76) 100%);
+    background: #000000;
     background-blend-mode: screen;
     box-shadow: 3.314px 3.314px 26.514px 0px rgba(255, 255, 255, 0.30) inset, -3.314px -3.314px 26.514px 0px rgba(255, 255, 255, 0.30) inset;
     backdrop-filter: blur(19.885713577270508px);
