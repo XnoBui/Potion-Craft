@@ -59,8 +59,15 @@
                     <div class="rewards-column">
                         <div class="rewards-panel inventory-rewards">
                             <div class="rewards-content">
-                                <div class="rewards-details">
+                                <!-- Top Row: Rewards Title + Claim Button (Mobile) -->
+                                <div class="rewards-header-row">
                                     <h3 class="rewards-title">Rewards</h3>
+                                    <button class="claim-button" id="claimInventoryBtn">
+                                        <span class="claim-text">Claim</span>
+                                    </button>
+                                </div>
+                                <!-- Bottom Row: Stats Only (Mobile) -->
+                                <div class="rewards-details">
                                     <div class="rewards-stats">
                                         <div class="reward-stat-item">
                                             <span class="reward-label">$KAI Earned</span>
@@ -76,9 +83,6 @@
                                         </div>
                                     </div>
                                 </div>
-                                <button class="claim-button" id="claimInventoryBtn">
-                                    <span class="claim-text">Claim</span>
-                                </button>
                             </div>
                         </div>
                     </div>

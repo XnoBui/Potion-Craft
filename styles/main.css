@@ -652,9 +652,9 @@ body {
 .rewards-content {
     /* Auto layout */
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: flex-start;
-    justify-content: space-between;
+    justify-content: flex-start;
     padding: 0px;
     gap: 20px;
     
@@ -663,6 +663,83 @@ body {
     height: 124.98px;
     left: 30px;
     top: 33.01px;
+}
+
+/* Desktop Layout - Show header row and hide rewards-details */
+.rewards-header-row {
+    display: flex; /* Show on desktop */
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+}
+
+/* Desktop: Hide the separate rewards-details container since title is in header row */
+.rewards-details {
+    display: none; /* Hide on desktop since title is in header row */
+}
+
+/* Desktop: Move title styling to work within header row */
+.rewards-header-row .rewards-title {
+    width: auto;
+    height: auto;
+    font-family: 'Helvetica Neue';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 125%;
+    display: flex;
+    align-items: center;
+    text-transform: capitalize;
+    color: #FFFFFF;
+    margin: 0;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+/* Desktop: Claim button in header row */
+.rewards-header-row .claim-button {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    padding: 10px 20px;
+    gap: 4px;
+    min-width: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: all 0.15s ease-out;
+    font-size: 14px;
+    font-weight: 600;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+/* Desktop: Show stats below header row */
+.rewards-stats {
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 38px;
+    
+    width: 369px;
+    height: 48px;
+    
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
 }
 
 /* Rewards Details Container */
@@ -1364,27 +1441,24 @@ body {
         justify-content: center;
     }
     
-    /* Rewards Content - Figma Layout */
+    /* Rewards Content - Figma Layout - Two Row Structure */
     .rewards-content {
         width: 100%;
         height: auto;
         display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        justify-content: space-between;
-        gap: 12px;
+        flex-direction: column;
+        gap: 26px;
         position: static;
         padding: 0;
     }
     
-    .rewards-details {
-        width: auto;
-        height: auto;
+    /* Top Row - Rewards Title + Claim Button */
+    .rewards-header-row {
         display: flex;
-        flex-direction: column;
-        gap: 16px;
-        flex: 1;
-        order: 0;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
     }
     
     .rewards-title {
@@ -1399,24 +1473,62 @@ body {
         height: auto;
     }
     
+    /* Claim Button - Figma Mobile Style - Top Row */
+    .claim-button {
+        background: #595959;
+        border-radius: 5.6px;
+        padding: 10px 20px;
+        min-width: 80px;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        cursor: pointer;
+        flex: none;
+    }
+    
+    .claim-text {
+        font-family: 'Helvetica Neue';
+        font-weight: 700;
+        font-size: 14.94px;
+        line-height: 1.25;
+        color: #FFFFFF;
+        text-transform: capitalize;
+        width: auto;
+        height: auto;
+    }
+    
+    /* Bottom Row - Stats Only */
+    .rewards-details {
+        width: auto;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        flex: none;
+    }
+    
     .rewards-stats {
         width: auto;
         height: auto;
         display: flex;
         flex-direction: row;
-        gap: 16px;
+        gap: 35px;
         align-items: center;
         flex-wrap: nowrap;
+        justify-content: center;
     }
     
     .reward-stat-item {
         display: flex;
         flex-direction: column;
-        gap: 8px;
+        gap: 24px;
         height: auto;
         width: auto;
         min-width: auto;
         align-items: flex-start;
+        text-align: left;
     }
     
     .reward-label {
@@ -1435,33 +1547,6 @@ body {
         font-family: 'Helvetica Neue';
         font-weight: 400;
         font-size: 14.01px;
-        line-height: 1.25;
-        color: #FFFFFF;
-        text-transform: capitalize;
-        width: auto;
-        height: auto;
-    }
-    
-    /* Claim Button - Figma Mobile Style */
-    .claim-button {
-        background: #595959;
-        border-radius: 5.6px;
-        padding: 10px 20px;
-        min-width: 80px;
-        height: auto;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border: none;
-        cursor: pointer;
-        flex: none;
-        order: 1;
-    }
-    
-    .claim-text {
-        font-family: 'Helvetica Neue';
-        font-weight: 700;
-        font-size: 14.94px;
         line-height: 1.25;
         color: #FFFFFF;
         text-transform: capitalize;
