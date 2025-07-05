@@ -1522,7 +1522,7 @@ body {
     
     /* World Pool Grid Mobile */
     .worldpool-section.active .worldpool-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
         gap: var(--spacing-sm);
         width: 100%;
         max-width: calc(100vw - 32px);
