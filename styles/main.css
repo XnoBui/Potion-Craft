@@ -1334,13 +1334,17 @@ body {
         flex-shrink: 0; /* Prevent shrinking */
     }
     
-    /* Rewards Panel - After Section Header */
+    /* Rewards Panel - Top aligned with bottom of Section Header with 12px padding */
     .rewards-column {
+        position: absolute;
+        top: 333px; /* Position to align top with bottom of section header (295px + 26px height + 12px padding) */
+        left: 25px;
+        right: 25px;
+        width: calc(100% - 50px);
         display: flex;
         align-items: center;
         justify-content: center;
-        width: calc(100% - 50px);
-        margin-top: 44px; /* Space for header */
+        z-index: 5;
     }
     
     .rewards-panel {
@@ -1463,8 +1467,12 @@ body {
         height: auto;
     }
     
-    /* Empty State - After Rewards Panel */
+    /* Empty State - Top aligned with bottom of Rewards Panel with 12px padding */
     .empty-state {
+        position: absolute;
+        top: 505px; /* Position to align top with bottom of rewards panel (333px + 160px height + 12px padding) */
+        left: 25px;
+        right: 25px;
         width: calc(100% - 50px);
         height: auto;
         background: #222222;
@@ -1474,7 +1482,7 @@ body {
         padding: 22.07px 17.28px;
         text-align: center;
         margin: 0;
-        order: 5;
+        z-index: 3;
     }
     
     .empty-content h3 {
