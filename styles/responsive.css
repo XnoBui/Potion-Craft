@@ -141,6 +141,11 @@
         font-size: 11px;
     }
 
+    /* Hide staking empty state panel on mobile - should only appear as popup */
+    .staking-empty-state {
+        display: none !important;
+    }
+
     /* Note: Main mobile layout (inventory section, rewards panel, etc.) 
        is handled in main.css @media (max-width: 480px) */
 }

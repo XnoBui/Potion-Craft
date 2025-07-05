@@ -1433,6 +1433,16 @@ body {
         align-items: stretch;
     }
     
+    /* TOP ROW: "Staking Rewards" + [Stake Button] + [Claim Button] */
+    .worldpool-section.active .worldpool-rewards-header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        gap: var(--spacing-sm);
+    }
+    
     .worldpool-section.active .worldpool-rewards-title {
         font-family: 'Helvetica Neue';
         font-weight: 700;
@@ -1440,63 +1450,22 @@ body {
         line-height: 1.25;
         color: #FFFFFF;
         text-transform: capitalize;
-        margin: 0 0 var(--spacing-sm) 0;
-    }
-    
-    .worldpool-section.active .worldpool-rewards-stats {
-        display: flex;
-        flex-direction: column;
-        gap: var(--spacing-sm);
-        align-items: stretch;
-    }
-    
-    .worldpool-section.active .worldpool-reward-stat-item {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        min-width: auto;
-        text-align: left;
-        padding: var(--spacing-xs) 0;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-    
-    .worldpool-section.active .worldpool-reward-stat-item:last-child {
-        border-bottom: none;
-    }
-    
-    .worldpool-section.active .worldpool-reward-stat-item .reward-label {
-        font-family: 'Helvetica Neue';
-        font-weight: 400;
-        font-size: 12px;
-        line-height: 1.25;
-        color: var(--muted-foreground);
-        text-align: left;
-    }
-    
-    .worldpool-section.active .worldpool-reward-stat-item .reward-value {
-        font-family: 'Helvetica Neue';
-        font-weight: 600;
-        font-size: 14px;
-        line-height: 1.25;
-        color: #FFFFFF;
-        text-align: right;
+        margin: 0;
+        flex: 1;
     }
     
     .worldpool-section.active .worldpool-reward-actions {
         display: flex;
-        gap: var(--spacing-sm);
-        justify-content: center;
-        flex-wrap: wrap;
-        margin-top: var(--spacing-sm);
+        gap: var(--spacing-xs);
+        flex-shrink: 0;
     }
     
     .worldpool-section.active .worldpool-stake-btn,
     .worldpool-section.active .worldpool-claim-btn {
         background: #595959;
         border-radius: 5.6px;
-        padding: 10px 20px;
-        min-width: 80px;
+        padding: 8px 16px;
+        min-width: 70px;
         height: auto;
         display: flex;
         align-items: center;
@@ -1507,8 +1476,48 @@ body {
         font-weight: 700;
         font-size: 14px;
         color: #FFFFFF;
+        flex: none;
+    }
+    
+    /* BOTTOM ROW: Stats in horizontal layout */
+    .worldpool-section.active .worldpool-rewards-stats {
+        display: flex;
+        flex-direction: row;
+        gap: var(--spacing-md);
+        align-items: flex-start;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    
+    .worldpool-section.active .worldpool-reward-stat-item {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        min-width: auto;
+        text-align: center;
         flex: 1;
-        max-width: 120px;
+        min-width: 60px;
+    }
+    
+    .worldpool-section.active .worldpool-reward-stat-item .reward-label {
+        font-family: 'Helvetica Neue';
+        font-weight: 400;
+        font-size: 11px;
+        line-height: 1.25;
+        color: var(--muted-foreground);
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    
+    .worldpool-section.active .worldpool-reward-stat-item .reward-value {
+        font-family: 'Helvetica Neue';
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 1.25;
+        color: #FFFFFF;
+        text-align: center;
     }
     
     /* World Pool Grid Mobile */
