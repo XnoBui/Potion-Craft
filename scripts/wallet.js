@@ -52,7 +52,13 @@ class WalletManager {
     initializeUI() {
         const connectBtn = document.getElementById('connectWallet');
         if (connectBtn) {
-            connectBtn.addEventListener('click', () => this.toggleConnection());
+            connectBtn.addEventListener('click', (e) => {
+                this.toggleConnection();
+                // Auto blur to remove focus state on mobile devices
+                setTimeout(() => {
+                    connectBtn.blur();
+                }, 100);
+            });
             this.updateConnectButton();
         }
     }

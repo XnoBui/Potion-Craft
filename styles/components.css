@@ -319,7 +319,7 @@
 }
 
 .connect-wallet-btn.connected::before {
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    background: none;
 }
 
 /* Staking Input Modal */

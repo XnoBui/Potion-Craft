@@ -28,9 +28,10 @@
         background-size: 24px 24px;
         text-indent: -9999px;
         filter: brightness(0) invert(1);
-        background-color: transparent;
-        border: none;
+        background-color: transparent !important;
+        border: none !important;
         color: white;
+        box-shadow: none !important;
     }
 
     .connect-wallet-btn .btn-text {
@@ -39,6 +40,69 @@
 
     .connect-wallet-btn.icon-only {
         font-size: 0;
+    }
+
+    /* Fix focus states on mobile - remove white background issue */
+    .connect-wallet-btn:focus {
+        outline: none !important;
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
+    
+    .connect-wallet-btn.connected:focus {
+        background-color: black !important;
+        color: white !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
+    
+    .connect-wallet-btn:not(.connected):focus {
+        background-color: transparent !important;
+        color: white !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
+
+    /* Fix active states on mobile */
+    .connect-wallet-btn:active {
+        background: transparent !important;
+        transform: none !important;
+        box-shadow: none !important;
+        border: none !important;
+    }
+    
+    .connect-wallet-btn.connected:active {
+        background-color: black !important;
+        color: white !important;
+        transform: none !important;
+        box-shadow: none !important;
+        border: none !important;
+    }
+
+    /* Additional fix for disconnected state - override any inherited styles */
+    .connect-wallet-btn:not(.connected):active {
+        background-color: transparent !important;
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        transform: none !important;
+    }
+
+    .connect-wallet-btn:not(.connected):hover {
+        background-color: transparent !important;
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        transform: none !important;
+    }
+
+    /* Remove any webkit tap highlight */
+    .connect-wallet-btn {
+        -webkit-tap-highlight-color: transparent !important;
+        -webkit-touch-callout: none !important;
+        -webkit-user-select: none !important;
+        user-select: none !important;
     }
 
     /* Potion Cards - Mobile optimizations */
@@ -362,6 +426,34 @@
     .potion-card:active {
         transform: scale(0.98);
         box-shadow: var(--shadow-sm);
+    }
+
+    /* Fix wallet button hover/focus states on touch devices */
+    .connect-wallet-btn:hover {
+        background: transparent !important;
+        transform: none !important;
+        box-shadow: none !important;
+    }
+    
+    .connect-wallet-btn.connected:hover {
+        background-color: black !important;
+        color: white !important;
+        transform: none !important;
+        box-shadow: none !important;
+    }
+
+    .connect-wallet-btn:focus {
+        outline: none !important;
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
+    
+    .connect-wallet-btn.connected:focus {
+        background-color: black !important;
+        color: white !important;
+        border: none !important;
+        box-shadow: none !important;
     }
 }
 
