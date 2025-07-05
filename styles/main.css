@@ -1249,20 +1249,21 @@ body {
         position: relative;
     }
     
-    /* Hide section header initially on mobile */
+    /* Position section header to align bottom with bottom of inventory video */
     .inventory-section .section-header {
         position: absolute;
-        top: 365px; /* Position after video (333px + gap) */
+        top: 295px; /* Position to align bottom with video bottom (333px - 26px header height - 12px padding) */
         left: 25px;
         right: 25px;
         width: calc(100% - 50px);
-        height: auto;
+        height: 26px; /* Set explicit height for proper alignment */
         margin: 0;
         gap: 0;
+        padding-bottom: 12px; /* Add 12px bottom padding */
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-end; /* Align items to bottom of container */
         z-index: 10;
     }
     
