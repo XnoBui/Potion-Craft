@@ -1014,9 +1014,15 @@ body {
 
 .worldpool-rewards-content {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.worldpool-rewards-header {
+    display: flex;
     justify-content: space-between;
-    gap: var(--spacing-lg);
+    align-items: center;
+    width: 100%;
 }
 
 .worldpool-rewards-details {
@@ -1028,7 +1034,7 @@ body {
     font-size: 1.25rem;
     font-weight: 700;
     color: var(--foreground);
-    margin: 0 0 var(--spacing-md) 0;
+    margin: 0;
 }
 
 .worldpool-rewards-stats {
