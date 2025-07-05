@@ -166,16 +166,26 @@ class WalletManager {
     updateConnectButton() {
         const connectBtn = document.getElementById('connectWallet');
         if (!connectBtn) return;
-        
+
+        const isMobile = document.body.classList.contains('mobile');
+
         if (this.isConnected) {
             connectBtn.classList.add('connected');
-            connectBtn.innerHTML = `
-                <span class="wallet-icon">✓</span>
-                ${this.formatAddress(this.address)}
-            `;
+            if (isMobile) {
+                connectBtn.innerHTML = `<span class="btn-text">${this.address.slice(0, 5)}...</span>`;
+            } else {
+                connectBtn.innerHTML = `
+                    <span class="wallet-icon">✓</span>
+                    ${this.formatAddress(this.address)}
+                `;
+            }
         } else {
             connectBtn.classList.remove('connected');
-            connectBtn.innerHTML = `Connect Wallet`;
+            if (isMobile) {
+                connectBtn.innerHTML = ``;
+            } else {
+                connectBtn.innerHTML = `Connect Wallet`;
+            }
         }
     }
     

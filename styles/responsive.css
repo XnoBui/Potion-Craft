@@ -16,11 +16,11 @@
 
     /* Header Adjustments */
     .header-content {
-        flex-direction: column;
-        gap: var(--spacing-sm);
-        align-items: stretch;
-        height: auto;
-        padding: var(--spacing-sm) 0;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        height: 56px;
+        padding: 0;
     }
 
     .logo h1 {
@@ -46,6 +46,39 @@
         align-self: center;
         font-size: 13px;
         padding: 6px var(--spacing-sm);
+        background-color: transparent;
+        border: none;
+        color: white;
+        width: auto;
+        height: auto;
+        background-image: none;
+    }
+
+    .connect-wallet-btn.connected {
+        background-color: black;
+        color: white;
+        padding: 4px 12px;
+        font-size: 12px;
+    }
+
+    .connect-wallet-btn:not(.connected) {
+        font-size: 0; /* Hide text */
+        width: 44px;
+        height: 44px;
+        background-image: url('../images/wallet.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 24px 24px;
+        text-indent: -9999px;
+        filter: brightness(0) invert(1);
+    }
+
+    .connect-wallet-btn .btn-text {
+        display: none;
+    }
+
+    .connect-wallet-btn.icon-only {
+        font-size: 0;
     }
 
     /* Section Headers */
