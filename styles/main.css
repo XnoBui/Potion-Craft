@@ -1360,7 +1360,7 @@ body {
         gap: 8px; /* 8px padding between title and description */
         width: 100%;
         height: auto;
-        margin-bottom: var(--spacing-lg);
+        margin-bottom: 12px; /* Reduced from 24px to 12px */
         position: relative;
         z-index: 10;
     }
@@ -1422,7 +1422,7 @@ body {
         border-radius: 16.81px;
         box-shadow: inset 0px 3.74px 3.74px 0px rgba(109, 109, 109, 0.25);
         padding: var(--spacing-md);
-        margin-bottom: var(--spacing-lg);
+        margin-bottom: 6px !important; /* Reduced from 12px to 6px - Force override desktop CSS */
         border: 1px solid var(--border);
     }
     
