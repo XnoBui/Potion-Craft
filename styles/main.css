@@ -1312,6 +1312,11 @@ body {
         font-size: 1.25rem;
     }
     
+    /* Fix 1: Remove border from connected wallet button */
+    .connect-wallet-btn.connected {
+        border: none;
+    }
+    
     /* Mobile Layout Structure - Following Figma Design */
     .inventory-section {
         display: flex;
@@ -1596,11 +1601,12 @@ body {
     /* Inventory Grid - Mobile */
     .inventory-grid {
         position: absolute;
+        top: 505px; /* Position to align top with bottom of rewards panel (333px + 160px height + 12px padding) */
         left: 50%;
         transform: translateX(-50%);
         width: 580px;
         max-width: calc(100vw - 32px);
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
         gap: var(--spacing-sm);
         margin: 0;
         order: 6;
