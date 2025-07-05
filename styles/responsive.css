@@ -24,7 +24,7 @@
     }
 
     .logo h1 {
-        font-size: 1.25rem;
+        font-size: 1.5rem;
         text-align: center;
     }
 
@@ -83,13 +83,14 @@
 
     /* Section Headers */
     .section-header {
-        flex-direction: column;
-        align-items: stretch;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
         gap: var(--spacing-sm);
     }
 
     .section-header h2 {
-        font-size: 16px;
+        font-size: 24px;
         text-align: center;
     }
 
@@ -177,8 +178,9 @@
 
     /* Buttons */
     .btn {
-        padding: 8px var(--spacing-sm);
+        padding: 4px var(--spacing-sm);
         font-size: 13px;
+        border-radius: 12px;
     }
 
     .btn small {
