@@ -1252,7 +1252,7 @@ body {
     /* Hide section header initially on mobile */
     .inventory-section .section-header {
         position: absolute;
-        top: 250px; /* Position after video (191px + gap) */
+        top: 365px; /* Position after video (333px + gap) */
         left: 25px;
         right: 25px;
         width: calc(100% - 50px);
@@ -1318,16 +1318,19 @@ body {
     }
     
     .section-icon {
-        width: 191px;
-        height: 191px;
+        width: 333px !important; /* Fixed width for mobile */
+        height: 333px !important; /* Fixed height for mobile */
         display: block;
+        flex-shrink: 0; /* Prevent shrinking */
     }
     
     .section-icon-img {
-        width: 191px;
-        height: 191px;
+        width: 333px !important; /* Fixed width for mobile */
+        height: 333px !important; /* Fixed height for mobile */
+        aspect-ratio: 1/1 !important; /* Maintain square aspect ratio */
         border-radius: 41px;
         object-fit: cover;
+        flex-shrink: 0; /* Prevent shrinking */
     }
     
     /* Rewards Panel - After Section Header */
