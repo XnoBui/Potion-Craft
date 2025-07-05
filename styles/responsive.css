@@ -10,6 +10,11 @@
         --spacing-xl: 2rem;
     }
 
+    /* MOBILE SPACING FIX: World Pool Rewards Panel - Override main.css */
+    .worldpool-section.active .worldpool-rewards {
+        margin-bottom: 12px !important; /* Match section header spacing for visual consistency */
+    }
+
     /* Header Adjustments - Keep existing wallet button behavior */
     .connect-wallet-btn.connected {
         background-color: black;

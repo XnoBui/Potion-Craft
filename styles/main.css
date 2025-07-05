@@ -1348,7 +1348,7 @@ body {
         width: 100%;
         max-width: 375px;
         min-height: auto;
-        gap: var(--spacing-lg);
+        gap: 0; /* Remove gap to prevent extra spacing between elements */
         position: relative;
     }
     
@@ -1422,7 +1422,7 @@ body {
         border-radius: 16.81px;
         box-shadow: inset 0px 3.74px 3.74px 0px rgba(109, 109, 109, 0.25);
         padding: var(--spacing-md);
-        margin-bottom: 6px !important; /* Reduced from 12px to 6px - Force override desktop CSS */
+        margin-bottom: 6px !important; /* Original value - overridden by responsive.css for mobile */
         border: 1px solid var(--border);
     }
     
