@@ -1,6 +1,6 @@
 /* Mobile First Responsive Design */
 
-/* Small Mobile Devices (320px - 480px) */
+/* Small Mobile Devices (320px - 480px) - Figma Mobile Design Applied in main.css */
 @media (max-width: 480px) {
     :root {
         --spacing-xs: 0.25rem;
@@ -10,50 +10,7 @@
         --spacing-xl: 2rem;
     }
 
-    .container {
-        padding: 0 var(--spacing-sm);
-    }
-
-    /* Header Adjustments */
-    .header-content {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        height: 56px;
-        padding: 0;
-    }
-
-    .logo h1 {
-        font-size: 1.5rem;
-        text-align: center;
-    }
-
-    .nav-tabs {
-        order: 2;
-        justify-content: center;
-        display: none; /* Hide on mobile as per azukigram pattern */
-    }
-
-    .nav-tab {
-        flex: 1;
-        text-align: center;
-        padding: var(--spacing-sm);
-        font-size: 13px;
-    }
-
-    .connect-wallet-btn {
-        order: 1;
-        align-self: center;
-        font-size: 13px;
-        padding: 6px var(--spacing-sm);
-        background-color: transparent;
-        border: none;
-        color: white;
-        width: auto;
-        height: auto;
-        background-image: none;
-    }
-
+    /* Header Adjustments - Keep existing wallet button behavior */
     .connect-wallet-btn.connected {
         background-color: black;
         color: white;
@@ -71,6 +28,9 @@
         background-size: 24px 24px;
         text-indent: -9999px;
         filter: brightness(0) invert(1);
+        background-color: transparent;
+        border: none;
+        color: white;
     }
 
     .connect-wallet-btn .btn-text {
@@ -81,50 +41,7 @@
         font-size: 0;
     }
 
-    /* Section Headers */
-    .section-header {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        gap: var(--spacing-sm);
-    }
-
-    .section-header h2 {
-        font-size: 24px;
-        text-align: center;
-    }
-
-    .section-description {
-        text-align: center;
-        margin-top: 0;
-        font-size: 13px;
-    }
-
-    .inventory-actions,
-    .worldpool-actions {
-        display: flex;
-        justify-content: center;
-    }
-
-    /* Rewards Panel */
-    .rewards-grid {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-sm);
-    }
-
-    .reward-actions {
-        grid-column: 1;
-        justify-content: center;
-    }
-
-    /* Grids */
-    .inventory-grid,
-    .worldpool-grid {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-sm);
-    }
-
-    /* Potion Cards */
+    /* Potion Cards - Mobile optimizations */
     .potion-card {
         padding: var(--spacing-sm);
     }
@@ -135,182 +52,6 @@
     }
 
     .potion-info h4 {
-        font-size: 14px;
-    }
-
-    /* Empty States */
-    .empty-state {
-        padding: var(--spacing-lg) var(--spacing-sm);
-    }
-
-    .empty-icon {
-        font-size: 2.5rem;
-    }
-
-    .empty-content h3 {
-        font-size: 1.1rem;
-    }
-
-    .empty-content p {
-        font-size: 13px;
-    }
-
-    .empty-actions {
-        flex-direction: column;
-        gap: var(--spacing-sm);
-    }
-
-    .empty-actions .btn {
-        width: 100%;
-        justify-content: center;
-    }
-
-    .inventory-rewards-container {
-        flex-direction: column;
-        align-items: center;
-        gap: var(--spacing-md);
-    }
-
-    .inventory-video-column,
-    .rewards-column {
-        width: 100%;
-        max-width: 400px; /* Limit width on mobile */
-    }
-
-    .rewards-panel.inventory-rewards {
-        box-sizing: border-box;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 21.48px 16.81px;
-        gap: 9.34px;
-        width: 100%;
-        height: 160px;
-        background: #222222;
-        box-shadow: inset 0px 3.74px 3.74px rgba(109, 109, 109, 0.25);
-        backdrop-filter: blur(27.5px);
-        border-radius: 16.81px;
-    }
-
-    .rewards-content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-        width: 100%;
-    }
-
-    .rewards-details {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
-        width: 100%;
-    }
-
-    .rewards-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-    }
-
-    .rewards-title {
-        font-family: 'Helvetica Neue';
-        font-weight: 700;
-        font-size: 18.68px;
-        color: #FFFFFF;
-        text-align: left;
-    }
-
-    .rewards-stats {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        width: 100%;
-    }
-
-    .claim-button {
-        width: 125.14px;
-        height: 24.28px;
-        background: #595959;
-        border-radius: 5.6px;
-        border: none;
-        color: #FFFFFF;
-        font-family: 'Helvetica Neue';
-        font-weight: 700;
-        font-size: 14.94px;
-        text-transform: capitalize;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .empty-state {
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 20px;
-        background: rgba(255, 255, 255, 0.05);
-        padding: var(--spacing-xl) var(--spacing-md);
-    }
-
-    .empty-content h3 {
-        font-size: 18px;
-    }
-
-    .empty-content p {
-        font-size: 14px;
-        color: var(--text-secondary);
-        max-width: 250px;
-        margin: var(--spacing-sm) auto;
-    }
-
-    .empty-icon {
-        display: none;
-    }
-
-    .empty-actions {
-        display: none;
-    }
-
-    .empty-rewards {
-        display: none;
-    }
-    .bottom-nav {
-        display: flex;
-        position: fixed;
-        bottom: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: calc(100% - 40px);
-        max-width: 400px;
-        background: rgba(255, 255, 255, 0.1);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        border-radius: 12px;
-        padding: 8px;
-        backdrop-filter: blur(10px);
-        z-index: 1000;
-    }
-
-    .nav-tab {
-        flex: 1;
-        padding: 12px;
-        background: transparent;
-        border: none;
-        color: var(--text-secondary);
-        font-size: 14px;
-        font-weight: 500;
-        border-radius: 8px;
-        transition: all 0.3s ease;
-    }
-
-    .nav-tab.active {
-        background: linear-gradient(to right, #370d00, #8e8e8e);
-        color: white;
-        box-shadow: inset -1.96px -1.96px 15.65px rgba(255, 255, 255, 0.3), inset 1.96px 1.96px 15.65px rgba(255, 255, 255, 0.3);
-    }
-
-    #craftBtn {
-        padding: 8px 12px;
         font-size: 14px;
     }
 
@@ -325,7 +66,7 @@
         font-size: 13px;
     }
 
-    /* Buttons */
+    /* Buttons - General mobile styling */
     .btn {
         padding: 4px var(--spacing-sm);
         font-size: 13px;
@@ -336,6 +77,8 @@
         font-size: 11px;
     }
 
+    /* Note: Main mobile layout (inventory section, rewards panel, etc.) 
+       is handled in main.css @media (max-width: 480px) */
 }
 
 /* Large Mobile Devices (481px - 768px) */

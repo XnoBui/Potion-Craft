@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Potion Craft - Mobile Test</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+    <style>
+        /* Force mobile viewport for testing */
+        body {
+            max-width: 375px;
+            margin: 0 auto;
+            border: 2px solid #333;
+            min-height: 100vh;
+        }
+        
+        /* Add mobile test indicator */
+        body::before {
+            content: "📱 MOBILE TEST VIEW (375px)";
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #ff6b6b;
+            color: white;
+            text-align: center;
+            padding: 4px;
+            font-size: 12px;
+            font-weight: bold;
+            z-index: 9999;
+        }
+        
+        .main-content {
+            margin-top: 30px; /* Account for test indicator */
+        }
+    </style>
+</head>
+<body class="inventory-active">
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <video autoplay muted loop class="logo-icon">
+                        <source src="images/potion icon.mp4" type="video/mp4">
+                        ⚗️
+                    </video>
+                    <img src="images/potion_logo.svg" alt="Potion Craft" class="logo-text">
+                </div>
+                <button class="connect-wallet-btn" id="connectWallet">
+                    <span class="btn-text">Connect Wallet</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Inventory Section -->
+            <section class="section inventory-section active" id="inventory">
+                <!-- Header Container - Frame 2147236883 -->
+                <div class="section-header">
+                    <h2>Your Inventory</h2>
+                    <div class="inventory-actions">
+                        <button class="btn btn-primary" id="craftBtn">
+                            <span class="btn-icon">🧪</span>
+                            Craft
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Inventory Video and Rewards Container - Frame 2147236882 -->
+                <div class="inventory-rewards-container">
+                    <!-- Inventory Video Column -->
+                    <div class="inventory-video-column">
+                        <span class="section-icon">
+                            <video autoplay muted loop class="section-icon-img">
+                                <source src="images/inventory.mp4" type="video/mp4">
+                                📦
+                            </video>
+                        </span>
+                    </div>
+                    
+                    <!-- Rewards Column -->
+                    <div class="rewards-column">
+                        <div class="rewards-panel inventory-rewards">
+                            <div class="rewards-content">
+                                <div class="rewards-details">
+                                    <h3 class="rewards-title">Rewards</h3>
+                                    <div class="rewards-stats">
+                                        <div class="reward-stat-item">
+                                            <span class="reward-label">$KAI Earned</span>
+                                            <span class="reward-value" id="kaiEarned">0</span>
+                                        </div>
+                                        <div class="reward-stat-item">
+                                            <span class="reward-label">Unclaimed $KAI</span>
+                                            <span class="reward-value" id="unclaimedKai">0</span>
+                                        </div>
+                                        <div class="reward-stat-item">
+                                            <span class="reward-label">Daily Expected</span>
+                                            <span class="reward-value" id="dailyExpected">0</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="claim-button" id="claimInventoryBtn">
+                                    <span class="claim-text">Claim</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Inventory Grid -->
+                <div class="inventory-grid" id="inventoryGrid">
+                    <!-- Empty state will be shown here -->
+                </div>
+
+                <!-- Empty State -->
+                <div class="empty-state" id="inventoryEmptyState">
+                    <div class="empty-content">
+                        <div class="empty-icon">🧪</div>
+                        <h3>Connect your wallet</h3>
+                        <p>Connect your wallet to view your potion inventory</p>
+                        <p>Start earning by obtaining Potions</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <button class="nav-tab active" data-tab="inventory">
+            <span class="nav-label">Inventory</span>
+        </button>
+        <button class="nav-tab" data-tab="worldpool">
+            <span class="nav-label">World Pool</span>
+        </button>
+    </nav>
+
+    <!-- Scripts -->
+    <script src="data/mock-data.js"></script>
+    <script src="scripts/wallet.js"></script>
+    <script src="scripts/inventory.js"></script>
+    <script src="scripts/worldpool.js"></script>
+    <script src="scripts/potions.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+</html>
