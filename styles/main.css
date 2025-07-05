@@ -1253,9 +1253,10 @@ body {
     .inventory-section .section-header {
         position: absolute;
         top: 295px; /* Position to align bottom with video bottom (333px - 26px header height - 12px padding) */
-        left: 25px;
-        right: 25px;
-        width: calc(100% - 50px);
+        left: 50%;
+        transform: translateX(-50%);
+        width: 580px;
+        max-width: calc(100vw - 32px);
         height: 26px; /* Set explicit height for proper alignment */
         margin: 0;
         gap: 0;
@@ -1338,9 +1339,10 @@ body {
     .rewards-column {
         position: absolute;
         top: 333px; /* Position to align top with bottom of section header (295px + 26px height + 12px padding) */
-        left: 25px;
-        right: 25px;
-        width: calc(100% - 50px);
+        left: 50%;
+        transform: translateX(-50%);
+        width: 580px;
+        max-width: calc(100vw - 32px);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -1348,14 +1350,14 @@ body {
     }
     
     .rewards-panel {
-        width: 100%;
-        max-width: 325px;
+        width: 580px;
+        max-width: calc(100vw - 32px);
         height: 160px;
         background: rgba(93, 93, 93, 0.3);
         backdrop-filter: blur(40px);
         border-radius: 16.81px;
         box-shadow: inset 0px 3.74px 3.74px 0px rgba(109, 109, 109, 0.25);
-        padding: 21.48px 16.81px;
+        padding: 8px 8px;
         margin: 0;
         display: flex;
         align-items: center;
@@ -1365,23 +1367,23 @@ body {
     /* Rewards Content - Figma Layout */
     .rewards-content {
         width: 100%;
-        height: 125px;
+        height: auto;
         display: flex;
         flex-direction: row;
         align-items: flex-start;
         justify-content: space-between;
-        gap: 20px;
+        gap: 12px;
         position: static;
         padding: 0;
     }
     
     .rewards-details {
         width: auto;
-        height: 106px;
+        height: auto;
         display: flex;
         flex-direction: column;
-        gap: 44px;
-        flex: none;
+        gap: 16px;
+        flex: 1;
         order: 0;
     }
     
@@ -1399,10 +1401,10 @@ body {
     
     .rewards-stats {
         width: auto;
-        height: 48px;
+        height: auto;
         display: flex;
         flex-direction: row;
-        gap: 35px;
+        gap: 16px;
         align-items: center;
         flex-wrap: nowrap;
     }
@@ -1410,8 +1412,8 @@ body {
     .reward-stat-item {
         display: flex;
         flex-direction: column;
-        gap: 24px;
-        height: 48px;
+        gap: 8px;
+        height: auto;
         width: auto;
         min-width: auto;
         align-items: flex-start;
@@ -1471,9 +1473,10 @@ body {
     .empty-state {
         position: absolute;
         top: 505px; /* Position to align top with bottom of rewards panel (333px + 160px height + 12px padding) */
-        left: 25px;
-        right: 25px;
-        width: calc(100% - 50px);
+        left: 50%;
+        transform: translateX(-50%);
+        width: 580px;
+        max-width: calc(100vw - 32px);
         height: auto;
         background: #222222;
         backdrop-filter: blur(56.52px);
@@ -1507,7 +1510,11 @@ body {
     
     /* Inventory Grid - Mobile */
     .inventory-grid {
-        width: calc(100% - 50px);
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 580px;
+        max-width: calc(100vw - 32px);
         grid-template-columns: 1fr;
         gap: var(--spacing-sm);
         margin: 0;
@@ -1756,40 +1763,6 @@ body {
     }
 }
 
-@media (max-width: 480px) {
-    .rewards-panel {
-        width: calc(100vw - 1rem);
-        height: calc((100vw - 1rem) * 162 / 736);
-        max-height: 140px;
-        min-height: 90px;
-        padding: var(--spacing-xs);
-    }
-    
-    /* Stack rewards in single column on very small screens */
-    .rewards-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: var(--spacing-xs);
-    }
-    
-    .reward-actions {
-        grid-column: 1 / -1;
-        justify-content: center;
-        margin-top: var(--spacing-xs);
-    }
-    
-    .reward-label {
-        font-size: 11px;
-    }
-    
-    .reward-value {
-        font-size: 13px;
-    }
-    
-    .rewards-panel h3 {
-        font-size: 0.9rem;
-        margin-bottom: var(--spacing-xs);
-    }
-}
 
 @media (max-width: 320px) {
     .rewards-panel {
