@@ -89,39 +89,12 @@
                     <!-- Empty state will be shown here -->
                 </div>
 
-                <!-- Mobile Rewards Panel (Mobile Only) -->
-                <div class="mobile-rewards-panel">
-                    <div class="mobile-rewards-content">
-                        <div class="mobile-rewards-details">
-                            <h3 class="mobile-rewards-title">Rewards</h3>
-                            <div class="mobile-rewards-stats">
-                                <div class="mobile-reward-stat-item">
-                                    <span class="mobile-reward-label">$KAI Earned</span>
-                                    <span class="mobile-reward-value" id="mobileKaiEarned">0</span>
-                                </div>
-                                <div class="mobile-reward-stat-item">
-                                    <span class="mobile-reward-label">Unclaimed $KAI</span>
-                                    <span class="mobile-reward-value" id="mobileUnclaimedKai">0</span>
-                                </div>
-                                <div class="mobile-reward-stat-item">
-                                    <span class="mobile-reward-label">Daily Expected</span>
-                                    <span class="mobile-reward-value" id="mobileDailyExpected">0</span>
-                                </div>
-                            </div>
-                        </div>
-                        <button class="mobile-claim-button" id="mobileClaimInventoryBtn">
-                            Claim
-                        </button>
-                    </div>
-                </div>
-
                 <!-- Empty State -->
                 <div class="empty-state" id="inventoryEmptyState">
                     <div class="empty-content">
                         <div class="empty-icon">🧪</div>
-                        <h3>Connect your wallet</h3>
-                        <p>Connect your wallet to view your potion inventory</p>
-                        <p>Start earning by obtaining Potions</p>
+                        <h3>Your inventory is empty</h3>
+                        <p>Start your alchemical journey</p>
                         <div class="empty-actions">
                             <button class="btn btn-primary" id="craftEmptyBtn">
                                 <span class="btn-icon">🧪</span>
@@ -133,6 +106,9 @@
                                 Sampling
                                 <small>Obtain a potion in World Pool</small>
                             </button>
+                        </div>
+                        <div class="empty-rewards">
+                            <p>Start earning by obtaining Potions</p>
                         </div>
                     </div>
                 </div>
